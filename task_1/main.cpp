@@ -5,7 +5,7 @@
 
 int main(int argc,char **argv)
 {
-	std::ifstream ifs(argv[1], std::ifstream::in);
+	std::ifstream ifs("data.txt", std::ifstream::in);
 	std::string sbuf;//,pattern="\\d*";
 	//std::regex rx ("\\d+", std::regex::ECMAScript|std::regex::icase);
 	//std::smatch m;
