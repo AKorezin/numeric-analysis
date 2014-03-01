@@ -45,7 +45,7 @@ int main(int argc,char **argv)
 		res+=l*(*ity);
 		l=1;
 	}
-	std::cout<<res<<std::endl;
+	std::cout<<"x="<<temp<<std::endl<<"y="<<res<<std::endl;
 	/*for(i=1;!ifs.eof();i++)
 	{
 		std::getline(ifs,sbuf,'\n');
