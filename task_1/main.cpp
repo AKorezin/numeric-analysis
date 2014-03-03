@@ -18,7 +18,7 @@ int main(int argc,char **argv)
 	{
 		ifs>>temp;
       #if (DEBUG)
-      std::cout<<temp<<std::endl;
+      std::cout<<i<<temp<<std::endl;
       #endif
 		x.push_back(temp);
 	}
@@ -26,7 +26,7 @@ int main(int argc,char **argv)
 	{
     	ifs>>temp;
       #if (DEBUG)
-      std::cout<<temp<<std::endl;
+      std::cout<<i<<temp<<std::endl;
       #endif
 		y.push_back(temp);
 	}
