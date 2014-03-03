@@ -1,4 +1,4 @@
-all: main 
+all: debug
 
 main: main.o
 	g++ main.o -o app 
