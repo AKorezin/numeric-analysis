@@ -17,11 +17,17 @@ int main(int argc,char **argv)
 	for(int i=0;i<n;i++)
 	{
 		ifs>>temp;
+      #if (DEBUG)
+      std::cout<<temp<<std::endl;
+      #endif
 		x.push_back(temp);
 	}
 	for(int i=0;i<n;i++)
 	{
     	ifs>>temp;
+      #if (DEBUG)
+      std::cout<<temp<<std::endl;
+      #endif
 		y.push_back(temp);
 	}
 	ifs>>temp;
