@@ -5,7 +5,7 @@ for path in task*; do
 	then
 		cd "$path"
 		make
-		./app*
+		sh ./run.sh
 		i=$((i+$?))
 		make clean
 		cd ..

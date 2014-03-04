@@ -1,20 +1,39 @@
 #include <iostream>
 #include <fstream>
 #include <list>
-
+#include <sstream>
 
 int main(int argc,char **argv)
 {
-	std::ifstream ifs("data.txt", std::ifstream::in);
-	std::string sbuf;//,pattern="\\d*";
+	std::ifstream ifs(argv[1], std::ifstream::in);
+	//,pattern="\\d*";
 	//std::regex rx ("\\d+", std::regex::ECMAScript|std::regex::icase);
 	//std::smatch m;
-	int n;
-	ifs>>n;
 	std::list<double> x,y;
 	std::list<double>::iterator itx,ity;
 	double temp;
-	for(int i=0;i<n;i++)
+	int n;
+	for(int i=0;!ifs.eof();i++)
+	{
+	double tx,ty;
+	std::string sbuf;
+	std::getline(ifs,sbuf);
+	std::stringstream is(sbuf);
+	if(is>>tx)
+		if(is>>ty)
+		{
+			x.push_back(tx);
+			y.push_back(ty);
+		}
+		else
+		{
+			temp=tx;
+			n=i;
+		}
+
+	}
+
+/*	for(int i=0;i<n;i++)
 	{
 		ifs>>temp;
       #if (DEBUG)
@@ -30,14 +49,7 @@ int main(int argc,char **argv)
       #endif
 		y.push_back(temp);
 	}
-	ifs>>temp;
-#if (DEBUG)
-	for	(itx=x.begin(),ity=y.begin(); itx!=x.end() && ity!=y.end(); itx++, ity++)
-	{
-		std::cout<<*itx<<" "<<*ity<<" "<<std::endl;
-	}
-	std::cout<<temp<<std::endl;
-#endif
+	ifs>>temp;*/
 	
 	std::list<double>::iterator itx1;
 	double l=1,res=0;
@@ -51,7 +63,15 @@ int main(int argc,char **argv)
 		res+=l*(*ity);
 		l=1;
 	}
-	std::cout<<"x="<<temp<<std::endl<<"y="<<res<<std::endl;
+
+	std::ofstream ofs(argv[2],std::ofstream::out);
+	int i=0;
+	for	(itx=x.begin(),ity=y.begin(); itx!=x.end() && ity!=y.end(); itx++, ity++,i++)
+	{
+		if(i==n)
+			ofs<<temp<<" "<<res<<std::endl;
+		ofs<<*itx<<" "<<*ity<<std::endl;
+	}
 	/*for(i=1;!ifs.eof();i++)
 	{
 		std::getline(ifs,sbuf,'\n');
