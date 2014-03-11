@@ -19,6 +19,7 @@ int main(int argc,char **argv)
 	std::string sbuf;
 	std::getline(ifs,sbuf);
 	std::stringstream is(sbuf);
+std::cout<<i<<n;
 	if(is>>tx)
 		if(is>>ty)
 		{
