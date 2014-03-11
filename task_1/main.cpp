@@ -68,7 +68,7 @@ int main(int argc,char **argv)
 	int i=0;
 	for	(itx=x.begin(),ity=y.begin(); (itx!=x.end() && ity!=y.end()) || i<=n; itx++, ity++,i++)
 	{
-std::cout<<i;
+std::cout<<i<<n;
 		if(i==n)
 			ofs<<temp<<" "<<res<<std::endl;
 		ofs<<*itx<<" "<<*ity<<std::endl;
