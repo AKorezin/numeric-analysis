@@ -19,7 +19,7 @@ int main(int argc,char **argv)
 	std::string sbuf;
 	std::getline(ifs,sbuf);
 	std::stringstream is(sbuf);
-std::cout<<i<<n;
+//std::cout<<i<<n;
 	if(is>>tx)
 		if(is>>ty)
 		{
@@ -67,12 +67,19 @@ std::cout<<i<<n;
 
 	std::ofstream ofs(argv[2],std::ofstream::out);
 	int i=0;
-	for	(itx=x.begin(),ity=y.begin(); (itx!=x.end() && ity!=y.end()) || i<=n; itx++, ity++,i++)
+	for	(itx=x.begin(),ity=y.begin(); (itx!=x.end() && ity!=y.end()) || i<=n;i++)
 	{
-std::cout<<i<<n;
+//std::cout<<i<<n;
 		if(i==n)
+{
 			ofs<<temp<<" "<<res<<std::endl;
+}
+else
+{
 		ofs<<*itx<<" "<<*ity<<std::endl;
+itx++;
+ity++;
+}
 	}
 	/*for(i=1;!ifs.eof();i++)
 	{
