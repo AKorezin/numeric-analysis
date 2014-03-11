@@ -12,7 +12,7 @@ int main(int argc,char **argv)
 	std::list<double> x,y;
 	std::list<double>::iterator itx,ity;
 	double temp;
-	int n;
+	int n=0;
 	for(int i=0;!ifs.eof();i++)
 	{
 	double tx,ty;
