@@ -66,8 +66,9 @@ int main(int argc,char **argv)
 
 	std::ofstream ofs(argv[2],std::ofstream::out);
 	int i=0;
-	for	(itx=x.begin(),ity=y.begin(); itx!=x.end() && ity!=y.end() || i<n; itx++, ity++,i++)
+	for	(itx=x.begin(),ity=y.begin(); itx!=x.end() && ity!=y.end() || i<=n; itx++, ity++,i++)
 	{
+std::cout<<i;
 		if(i==n)
 			ofs<<temp<<" "<<res<<std::endl;
 		ofs<<*itx<<" "<<*ity<<std::endl;
