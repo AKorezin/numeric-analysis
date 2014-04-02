@@ -18,7 +18,7 @@ int main(int argc,char **argv)
 	for(int i=1;i<4;i++)
 		a[i]/=a[0];
 	
-	double discrim,q,r,dum1,s,t,term;
+	double discrim,q,r,fi,s,t,term;
 
 	q=(3*a[2]-pow(a[1],2))/9;
 	r=(-(27*a[3])+a[1]*(9*a[2]-2*pow(a[1],2)))/54;
@@ -50,12 +50,12 @@ int main(int argc,char **argv)
 		ofs<<std::endl;
 		return 0;
 	}
-	q=-q;
-	dum1=acos(r/sqrt(pow(q,3)));
+	q=std::abs(q);
+	fi=acos(r/sqrt(pow(q,3)));
 	r=2*sqrt(q);
-	x[0]=(-term+r*cos(dum1/3));
-	x[1]=(-term+r*cos((dum1+2*M_PI)/3));
-	x[2]=(-term+r*cos((dum1+4*M_PI)/3));
+	x[0]=(-term+r*cos(fi/3));
+	x[1]=(-term+r*cos((fi+2*M_PI)/3));
+	x[2]=(-term+r*cos((fi+4*M_PI)/3));
 	for(int i=0;i<3;i++)
 		ofs<<x[i]<<" ";
 
