@@ -1,8 +1,8 @@
 #!/bin/sh
 infile=data.txt
 outfile=out.txt
-cat $infile
-echo ./app* $infile $outfile
+echo "$(cat $infile)"
+echo -e "./app* $infile $outfile"
 ./app* $infile $outfile
-cat $outfile
+echo "$(cat $outfile)"
 rm $outfile
